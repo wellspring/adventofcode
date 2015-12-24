@@ -16,7 +16,7 @@ echo " [+] Getting about page ..."
 wget -qO- http://adventofcode.com/about | awk '/<article/,/<\/article>/' | sed 's/<\/\?em/**&/g;s/<\/\?code/`&/g;s/<li/  - &/g;s/<p>/\n&/g;s/ ---/&\n/;s/<[^>]*>//g;s/ \+/ /g' | fold -s -w 80 > README.md
 for n in {1..25}; do
   echo " [+] Getting day $n ..."
-  mcd day$n >/dev/null
+  mcd day_$(printf '%02d' $n) >/dev/null
   wget -q --header="Cookie: session=$AOC_SESSION" http://adventofcode.com/day/${n}/input
   wget -q --header="Cookie: session=$AOC_SESSION" -O README.html http://adventofcode.com/day/$n
   awk '/<article/,/<\/article>/' README.html | sed 's/<li/  - &/g;s/<p>/\n&/g;s/ ---/&\n/;s/<[^>]*>//g;s/ \+/ /g' | fold -s -w 80 > README.txt
