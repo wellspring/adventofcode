@@ -1,5 +1,11 @@
 # Advent of Code (2015)
 
+Clone and fork this repository and add your solutions for each languages in a
+new folder named `./day{N}/{LANGUAGE}/` (e.g. `day1/ruby/solution1.rb`). You
+can for example first write tests while reading the description of each day,
+then try to write the code. If the tests pass, you can try your solution on the
+website.
+
 http://www.adventofcode.com/
 
 ## Intro
